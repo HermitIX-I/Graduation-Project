@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_16dp">
+
+    <!-- 健康评分卡片 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:padding="@dimen/margin_16dp"
+        android:orientation="vertical"
+        android:elevation="2dp"
+        android:radius="@dimen/corner_12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="健康评分"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_mid" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="88"
+            android:textColor="@color/color_health_green"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_8dp" />
+
+        <TextView
+            android:id="@+id/tv_sub_health_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="亚健康类型：气虚体质"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_small"
+            android:layout_marginTop="@dimen/margin_4dp" />
+    </LinearLayout>
+
+    <!-- 核心问题卡片 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:padding="@dimen/margin_16dp"
+        android:orientation="vertical"
+        android:elevation="2dp"
+        android:radius="@dimen/corner_12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="核心健康问题"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_mid" />
+
+        <TextView
+            android:id="@+id/tv_problem_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="心肺功能较弱，建议每周增加3次有氧运动"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_small"
+            android:layout_marginTop="@dimen/margin_8dp" />
+    </LinearLayout>
+
+    <!-- AI建议卡片 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:padding="@dimen/margin_16dp"
+        android:orientation="vertical"
+        android:elevation="2dp"
+        android:radius="@dimen/corner_12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI锻炼建议"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_mid" />
+
+        <!-- 核心建议 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="核心建议"
+                android:textColor="@color/color_health_green"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_core_advice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_4dp" />
+        </LinearLayout>
+
+        <!-- 次要建议 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="次要建议"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_minor_advice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 进入运动主页按钮 -->
+    <Button
+        android:id="@+id/btn_to_motion_main"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/color_health_green"
+        android:text="进入运动主页"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_mid"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:radius="@dimen/corner_12dp" />
+
+    <!-- 加载/错误视图（默认隐藏） -->
+    <include
+        layout="@layout/layout_loading"
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/layout_error"
+        android:id="@+id/error_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</LinearLayout>

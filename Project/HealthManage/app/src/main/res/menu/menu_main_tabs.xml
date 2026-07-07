@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="@string/tab_home" />
+    <item
+        android:id="@+id/nav_health"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="@string/tab_health" />
+    <item
+        android:id="@+id/nav_sport"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:title="@string/tab_sport" />
+    <item
+        android:id="@+id/nav_social"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/tab_social" />
+    <item
+        android:id="@+id/nav_mine"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/tab_mine" />
+</menu>

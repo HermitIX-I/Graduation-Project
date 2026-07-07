@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="@dimen/margin_16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 运动类型标题 -->
+        <TextView
+            android:id="@+id/tv_motion_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跑步记录"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold" />
+
+        <!-- 基础信息卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/margin_16dp"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:elevation="2dp"
+            android:radius="@dimen/corner_12dp">
+
+            <!-- 时长输入 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="运动时长"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_mid" />
+
+                <EditText
+                    android:id="@+id/et_duration"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_edittext"
+                    android:hint="请输入时长（分钟）"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:textSize="@dimen/text_mid" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分钟"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_small"
+                    android:layout_marginLeft="@dimen/margin_8dp" />
+            </LinearLayout>
+
+            <!-- 跑步专属：距离输入（默认隐藏，动态显示） -->
+            <LinearLayout
+                android:id="@+id/ll_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_16dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="运动距离"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_mid" />
+
+                <EditText
+                    android:id="@+id/et_distance"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_edittext"
+                    android:hint="请输入距离（公里）"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:textSize="@dimen/text_mid" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="公里"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_small"
+                    android:layout_marginLeft="@dimen/margin_8dp" />
+            </LinearLayout>
+
+            <!-- 跳绳专属：个数输入（默认隐藏） -->
+            <LinearLayout
+                android:id="@+id/ll_skip_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="跳绳个数"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_mid" />
+
+                <EditText
+                    android:id="@+id/et_skip_count"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_edittext"
+                    android:hint="请输入跳绳个数"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:textSize="@dimen/text_mid" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_small"
+                    android:layout_marginLeft="@dimen/margin_8dp" />
+            </LinearLayout>
+
+            <!-- 哑铃专属：组数+次数+重量（默认隐藏） -->
+            <LinearLayout
+                android:id="@+id/ll_dumbbell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:visibility="gone">
+
+                <!-- 组数 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="运动组数"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_mid" />
+
+                    <EditText
+                        android:id="@+id/et_group_count"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edittext"
+                        android:hint="请输入组数"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        android:textSize="@dimen/text_mid" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="组"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_small"
+                        android:layout_marginLeft="@dimen/margin_8dp" />
+                </LinearLayout>
+
+                <!-- 每组次数 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_8dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="每组次数"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_mid" />
+
+                    <EditText
+                        android:id="@+id/et_per_group_count"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edittext"
+                        android:hint="请输入次数"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        android:textSize="@dimen/text_mid" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="次"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_small"
+                        android:layout_marginLeft="@dimen/margin_8dp" />
+                </LinearLayout>
+
+                <!-- 重量 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_8dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="哑铃重量"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_mid" />
+
+                    <EditText
+                        android:id="@+id/et_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edittext"
+                        android:hint="请输入重量（kg）"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp"
+                        android:textSize="@dimen/text_mid" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kg"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_small"
+                        android:layout_marginLeft="@dimen/margin_8dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 计算结果卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/margin_16dp"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:elevation="2dp"
+            android:radius="@dimen/corner_12dp">
+
+            <!-- 配速（仅跑步） -->
+            <LinearLayout
+                android:id="@+id/ll_pace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="平均配速"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_mid" />
+
+                <TextView
+                    android:id="@+id/tv_pace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 分钟/公里"
+                    android:textColor="@color/color_health_green"
+                    android:textSize="@dimen/text_mid" />
+            </LinearLayout>
+
+            <!-- 消耗卡路里 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_8dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="消耗卡路里"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_mid" />
+
+                <TextView
+                    android:id="@+id/tv_calorie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 千卡"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/text_mid" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 提交按钮 -->
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/color_health_green"
+            android:text="提交运动记录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_mid"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:radius="@dimen/corner_12dp" />
+
+        <!-- 加载弹窗（默认隐藏） -->
+        <include
+            layout="@layout/layout_loading"
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <!-- 提交结果提示 -->
+        <TextView
+            android:id="@+id/tv_submit_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_small"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_8dp" />
+    </LinearLayout>
+</ScrollView>

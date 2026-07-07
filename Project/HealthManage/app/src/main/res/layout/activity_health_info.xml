@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完善健康信息"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- 身高 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="身高："
+                android:textSize="16sp"
+                android:gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/et_height"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="请输入身高（cm）"
+                android:inputType="numberDecimal"
+                android:background="@drawable/shape_edittext"
+                android:paddingLeft="15dp"/>
+        </LinearLayout>
+
+        <!-- 体重 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="体重："
+                android:textSize="16sp"
+                android:gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="请输入体重（kg）"
+                android:inputType="numberDecimal"
+                android:background="@drawable/shape_edittext"
+                android:paddingLeft="15dp"/>
+        </LinearLayout>
+
+        <!-- 年龄 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="年龄："
+                android:textSize="16sp"
+                android:gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/et_age"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="请输入年龄"
+                android:inputType="number"
+                android:background="@drawable/shape_edittext"
+                android:paddingLeft="15dp"/>
+        </LinearLayout>
+
+        <!-- 性别选择 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="性别："
+                android:textSize="16sp"
+                android:gravity="center_vertical"/>
+            <RadioGroup
+                android:id="@+id/rg_gender"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="男"
+                    android:textSize="16sp"
+                    android:checked="true"/>
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="女"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="20dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- 血压 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="血压："
+                android:textSize="16sp"
+                android:gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/et_blood_pressure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="例：120/80"
+                android:background="@drawable/shape_edittext"
+                android:paddingLeft="15dp"/>
+        </LinearLayout>
+
+        <!-- 血糖 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="血糖："
+                android:textSize="16sp"
+                android:gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/et_blood_sugar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="请输入血糖值（mmol/L）"
+                android:inputType="numberDecimal"
+                android:background="@drawable/shape_edittext"
+                android:paddingLeft="15dp"/>
+        </LinearLayout>
+
+        <!-- 提交按钮 -->
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="提交并查看健康评估"
+            android:background="@drawable/bg_round_btn"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="40dp"/>
+
+    </LinearLayout>
+</ScrollView>

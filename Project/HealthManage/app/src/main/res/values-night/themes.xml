@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.HealthManage" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/health_primary_dark</item>
+        <item name="colorSecondary">@color/health_primary</item>
+        <item name="colorTertiary">@color/teal_200</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Theme.HealthManage.NoActionBar" parent="Theme.HealthManage">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.HealthManage.NoActionBar.Fullscreen" parent="Theme.HealthManage.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

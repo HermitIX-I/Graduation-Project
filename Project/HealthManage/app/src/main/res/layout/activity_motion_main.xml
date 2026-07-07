@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+
+    <!-- 顶部导航栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color_health_green"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="运动主页"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_mid"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_motion_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运动计划"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_small" />
+    </LinearLayout>
+
+    <!-- 健康简讯 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/margin_16dp"
+        android:layout_margin="@dimen/margin_8dp"
+        android:elevation="1dp"
+        android:radius="@dimen/corner_8dp">
+
+        <TextView
+            android:id="@+id/tv_health_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="您的健康评分88分，建议每周跑步3次"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_small" />
+    </LinearLayout>
+
+    <!-- 运动类型列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_motion_type"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/margin_8dp" />
+
+    <!-- 底部导航栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:elevation="4dp">
+
+        <!-- 运动主页（选中） -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_tab_main_selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运动主页"
+                android:textColor="@color/color_health_green"
+                android:textSize="@dimen/text_small"
+                android:layout_marginTop="@dimen/margin_4dp" />
+        </LinearLayout>
+
+        <!-- AI推荐（未选中） -->
+        <LinearLayout
+            android:id="@+id/ll_tab_ai"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_tab_ai_unselected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI推荐"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_small"
+                android:layout_marginTop="@dimen/margin_4dp" />
+        </LinearLayout>
+
+        <!-- 个人中心（未选中） -->
+        <LinearLayout
+            android:id="@+id/ll_tab_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_tab_mine_unselected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个人中心"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_small"
+                android:layout_marginTop="@dimen/margin_4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
