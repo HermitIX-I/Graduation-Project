@@ -35,3 +35,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Project.zip
+thesis_tmp/
+*.docx
+*.pdf
+*.pptx
+~$*
+*.tmp
