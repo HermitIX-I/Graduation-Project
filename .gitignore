@@ -43,3 +43,7 @@ thesis_tmp/
 ~$*
 *.tmp
 *.temp
+**/application.properties
+**/application.yml
+**/application.yaml
+**/uploads/
